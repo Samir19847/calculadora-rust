@@ -2,6 +2,20 @@ use std::io;
 use std::io::Write;
 
 fn main() {
+
+    fn sumar(a:f64, b:f64)->f64{
+        a+b
+    }
+    fn restar(a:f64, b:f64)->f64{
+        a-b
+    }
+    fn multiplicar(a:f64, b:f64)->f64{
+        a*b
+    }
+    fn dividir(a:f64, b:f64)->f64{
+        a/b
+    }
+    
     loop {
         println!("-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-");
         println!("-_-          ¡Bienvenido al sistema!          -_-");
