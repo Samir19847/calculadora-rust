@@ -111,9 +111,10 @@ fn main() {
 
                 let resultado= dividir(numeroa, numerob);
                 let resultado2:f64=residuo(numeroa, numerob);
-                println!("La división de {} y de {} es {} unidades.", numeroa, numerob, resultado);
-                println!("Teniendo un residuo de {} unidades.", resultado2);
+                let mensaje = if numerob==0.00 { String::from("No se puede dividir entre cero, por lo tanto, el resultado está indefinido.")} else {format!("La división de {} y de {} es de {} unidades, y su residuo es de {} unidades. ", numeroa, numerob, resultado, resultado2)};
+                println!("{}", mensaje);
                 println!();
+
             },
             5=>{
                 println!("Saliendo del programa..."); break;
