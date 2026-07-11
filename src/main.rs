@@ -38,7 +38,14 @@ fn main() {
         let mut entrada:String=String::new();
         io::stdout().flush().expect("Error en el forzamiento del buffer.");
         io::stdin().read_line(&mut entrada).expect("Error en la lectura de la línea.");
-        let opcion:u64=entrada.trim().parse().expect("Error en la conversión de tipo de datos.");
+        let opcion:u64= match entrada.trim().parse() {
+            Ok(numero)=>numero,
+            Err(_)=>{
+                println!("Por favor, ingrese un número para seleccionar una operación...");
+                println!();
+                continue;
+            }
+        };
         println!();
         match opcion{
             1=>{
@@ -46,14 +53,28 @@ fn main() {
                 let mut entrada1:String=String::new();
                 io::stdout().flush().expect("Error en el forzamiento del buffer.");
                 io::stdin().read_line(&mut entrada1).expect("Error en la lectura de la línea.");
-                let numeroa:f64=entrada1.trim().parse().expect("Error en la conversión de tipo de datos.");
+                let numeroa:f64= match entrada1.trim().parse() {
+                    Ok(numero1)=>numero1,
+                    Err(_) =>{
+                        println!("Por favor, ingrese un número para poder realizar la operación...");
+                        println!();
+                        continue;
+                    }
+                };
                 println!();
 
                 print!("Por favor, ingrese otro número: ");
                 let mut entrada2:String=String::new();
                 io::stdout().flush().expect("Error en el forzamiento del buffer.");
                 io::stdin().read_line(&mut entrada2).expect("Error en la lectura de la línea.");
-                let numerob:f64=entrada2.trim().parse().expect("Error en la conversión de tipo de datos.");
+                let numerob:f64= match entrada2.trim().parse() {
+                    Ok(numero2)=>numero2,
+                    Err(_) =>{
+                        println!("Por favor, ingrese un número para poder realizar la operación...");
+                        println!();
+                        continue;
+                    }
+                }
 
                 let resultado= sumar(numeroa, numerob);
                 println!("La suma de {} y de {} es {} unidades.", numeroa, numerob, resultado);
@@ -64,14 +85,28 @@ fn main() {
                 let mut entrada1:String=String::new();
                 io::stdout().flush().expect("Error en el forzamiento del buffer.");
                 io::stdin().read_line(&mut entrada1).expect("Error en la lectura de la línea.");
-                let numeroa:f64=entrada1.trim().parse().expect("Error en la conversión de tipo de datos.");
+                let numeroa:f64= match entrada1.trim().parse() {
+                    Ok(numero1)=>numero1,
+                    Err(_) =>{
+                        println!("Por favor, ingrese un número para poder realizar la operación...");
+                        println!();
+                        continue;
+                    }
+                };
                 println!();
 
                 print!("Por favor, ingrese otro número: ");
                 let mut entrada2:String=String::new();
                 io::stdout().flush().expect("Error en el forzamiento del buffer.");
                 io::stdin().read_line(&mut entrada2).expect("Error en la lectura de la línea.");
-                let numerob:f64=entrada2.trim().parse().expect("Error en la conversión de tipo de datos.");
+                let numerob:f64= match entrada2.trim().parse() {
+                    Ok(numero2)=>numero2,
+                    Err(_) =>{
+                        println!("Por favor, ingrese un número para poder realizar la operación...");
+                        println!();
+                        continue;
+                    }
+                };
 
                 let resultado= restar(numeroa, numerob);
                 println!("La resta de {} y de {} es {} unidades.", numeroa, numerob, resultado);
@@ -82,14 +117,28 @@ fn main() {
                 let mut entrada1:String=String::new();
                 io::stdout().flush().expect("Error en el forzamiento del buffer.");
                 io::stdin().read_line(&mut entrada1).expect("Error en la lectura de la línea.");
-                let numeroa:f64=entrada1.trim().parse().expect("Error en la conversión de tipo de datos.");
+                let numeroa:f64=entrada1.trim().parse() {
+                    Ok(numero1)=>numero1
+                    Err(_) =>{
+                        println!("Por favor, ingrese un número para poder realizar la operación...");
+                        println!();
+                        continue;
+                    }
+                };
                 println!();
 
                 print!("Por favor, ingrese otro número: ");
                 let mut entrada2:String=String::new();
                 io::stdout().flush().expect("Error en el forzamiento del buffer.");
                 io::stdin().read_line(&mut entrada2).expect("Error en la lectura de la línea.");
-                let numerob:f64=entrada2.trim().parse().expect("Error en la conversión de tipo de datos.");
+                let numerob:f64=entrada2.trim().parse() {
+                    Ok(numero2)=>numero2
+                    Err(_) =>{
+                        println!("Por favor, ingrese un número para poder realizar la operación...");
+                        println!();
+                        continue;
+                    }
+                };
 
                 let resultado= multiplicar(numeroa, numerob);
                 println!("La multiplicación de {} y de {} es {} unidades.", numeroa, numerob, resultado);
@@ -100,14 +149,28 @@ fn main() {
                 let mut entrada1:String=String::new();
                 io::stdout().flush().expect("Error en el forzamiento del buffer.");
                 io::stdin().read_line(&mut entrada1).expect("Error en la lectura de la línea.");
-                let numeroa:f64=entrada1.trim().parse().expect("Error en la conversión de tipo de datos.");
+                let numeroa:f64=match entrada1.trim().parse() {
+                    Ok(numero1)=>numero1,
+                    Err(_) =>{
+                        println!("Por favor, ingrese un número para poder realizar la operación...");
+                        println!();
+                        continue;
+                    }
+                };
                 println!();
 
                 print!("Por favor, ingrese otro número: ");
                 let mut entrada2:String=String::new();
                 io::stdout().flush().expect("Error en el forzamiento del buffer.");
                 io::stdin().read_line(&mut entrada2).expect("Error en la lectura de la línea.");
-                let numerob:f64=entrada2.trim().parse().expect("Error en la conversión de tipo de datos.");
+                let numerob:f64=match entrada2.trim().parse() {
+                    Ok(numero2)=>numero2,
+                    Err(_) =>{
+                        println!("Por favor, ingrese un número para poder realizar la operación...");
+                        println!();
+                        continue;
+                    }
+                };
 
                 let resultado= dividir(numeroa, numerob);
                 let resultado2:f64=residuo(numeroa, numerob);
