@@ -74,7 +74,7 @@ fn main() {
                         println!();
                         continue;
                     }
-                }
+                };
 
                 let resultado= sumar(numeroa, numerob);
                 println!("La suma de {} y de {} es {} unidades.", numeroa, numerob, resultado);
@@ -117,8 +117,8 @@ fn main() {
                 let mut entrada1:String=String::new();
                 io::stdout().flush().expect("Error en el forzamiento del buffer.");
                 io::stdin().read_line(&mut entrada1).expect("Error en la lectura de la línea.");
-                let numeroa:f64=entrada1.trim().parse() {
-                    Ok(numero1)=>numero1
+                let numeroa:f64= match entrada1.trim().parse() {
+                    Ok(numero1)=>numero1,
                     Err(_) =>{
                         println!("Por favor, ingrese un número para poder realizar la operación...");
                         println!();
@@ -131,8 +131,8 @@ fn main() {
                 let mut entrada2:String=String::new();
                 io::stdout().flush().expect("Error en el forzamiento del buffer.");
                 io::stdin().read_line(&mut entrada2).expect("Error en la lectura de la línea.");
-                let numerob:f64=entrada2.trim().parse() {
-                    Ok(numero2)=>numero2
+                let numerob:f64= match entrada2.trim().parse() {
+                    Ok(numero2)=>numero2,
                     Err(_) =>{
                         println!("Por favor, ingrese un número para poder realizar la operación...");
                         println!();
